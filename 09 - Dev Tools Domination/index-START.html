@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('hello world!');
+
+    // Interpolated
+    const me = {name: 'Mariel', age: 19};
+    console.log(`Hello my name is ${me.name} and i'm ${me.age} years old`);
+
+    // Styled
+    console.log('%c I am a beautiful text ', 'background-color:#555555; color:white; font-size:20px;');
+
+    // warning!
+    console.warn('Be careful!');
+
+    // Error :|
+    console.error('Error on this code');
+
+    // Info
+    console.info('Chess is hard to play');
+
+    // Testing
+    const p = document.querySelector('p')
+
+    console.assert(p.classList.contains('ouch'), 'it doesnt contain the class "ouch"')
+
+    // clearing
+    console.clear()
+
+    // Viewing DOM Elements
+    console.dir(p)
+
+    // Grouping together
+
+    // counting
+
+    // timing
+
+  </script>
+</body>
+</html>

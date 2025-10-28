@@ -1,0 +1,83 @@
+html {
+    box-sizing: border-box;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    
+}
+
+#container {
+    min-height: 100vh;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.panel {
+    font-size: clamp(16px, 2vw, 3rem);
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    align-items: center;
+    /* transition */
+    transition: all 0.6s cubic-bezier(0.67, 0.27, 0.49, 0.95);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.panel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel p {
+    width: 100%;
+    text-transform: uppercase;
+    text-shadow: 0 0 4px rgb(0, 0, 0), 0 0 14px rgba(0, 0, 0, 0.45);
+}
+
+.panel p:nth-child(2) {
+    color: #f2f2f2;
+    font-size: clamp(16px, 4vw, 40px);
+}
+
+.panel1 { background-image:url(https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg); }
+.panel2 { background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTwQwy0darw093qEwdK1NyQuWEy7kTMuTq5g&s); }
+.panel3 { background-image:url(https://depositphotos-blog.s3.eu-west-1.amazonaws.com/uploads/2017/07/Soothing-nature-backgrounds-2.jpg); }
+.panel4 { background-image:url(https://i.ytimg.com/vi/IUN664s7N-c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCK23ncwZjjd8IisSnQeSXEp5ZjXw); }
+.panel5 { background-image:url(https://images.ctfassets.net/1mle4fbytmpl/7g6r8aP7A3xA0ZgcUivjlk/7d2de5ba5753aebd21a7cd747fe4dd4d/AdobeStock_115649942.jpg?w=600&h=312&fm=webp); }
+
+
+.panel > *:first-child {
+    transform: translateY(-100vh);
+}
+.panel > *:last-child {
+    transform: translateY(100vh);
+}
+.panel.open-active > *:first-child {
+    transform: translateY(50%);
+}
+.panel.open-active > *:last-child {
+    transform: translateY(-50%);
+}
+
+.panel.open {
+    font-size: clamp(20px, 3vw, 45px);
+    flex: 4;
+}

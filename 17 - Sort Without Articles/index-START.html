@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sort Without Articles</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: url("https://stubbs.ca/wp-content/uploads/2015/02/tmn_bg.jpg");
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+
+    #bands {
+      list-style: inside square;
+      font-size: 20px;
+      background: white;
+      width: 500px;
+      margin: auto;
+      padding: 0;
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    #bands li {
+      border-bottom: 1px solid #efefef;
+      padding: 20px;
+    }
+
+    #bands li:last-child {
+      border-bottom: 0;
+    }
+
+    a {
+      color: #ffc600;
+      text-decoration: none;
+    }
+
+  </style>
+
+  <ul id="bands"></ul>
+
+<script>
+const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+function removeArticle(bandName) {
+  return bandName.replace(/^(a |the |an )/gi, "").trim();
+}
+
+const sortBand = bands.sort((a, b) => removeArticle(a) > removeArticle(b) ? 1 : -1)
+console.log(sortBand)
+
+document.querySelector('#bands').innerHTML = sortBand.map(band => `<li>${band}</li>`).join('')
+
+</script>
+
+</body>
+</html>

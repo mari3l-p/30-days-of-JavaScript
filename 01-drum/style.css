@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url('bkg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+#container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* button */
+
+#button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
+    
+}
+
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 25px;
+}
+  
+.button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+  
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+  
+.button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+/* modal */
+
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal content box */
+.modal-content {
+    background: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 10px;
+    width: 350px;
+    font-size: 1.3em;
+    text-align: justify;
+    position: relative;
+    box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.75);
+}
+
+
+.modal-content li {
+    list-style-type: none;
+    color: rgb(88, 88, 88);
+}
+
+.modal-content h2 {
+    text-align: center;
+}
+
+/* Close button (X) */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* highligt drum when key clicked */
+
+#drum-container {
+    position: relative;
+    width: 500px; /* Adjust based on your image */
+    margin: auto;
+}
+
+.drum-part {
+    position: absolute;
+    cursor: pointer;
+    display: none;
+    border-radius: 10%;
+}
+
+.drum-part.active {
+    z-index: -1;
+    display: block;
+    background-color: rgba(255, 230, 0, 0.398);
+    box-shadow: 0px 0px 30px 10px rgba(255, 230, 0, 0.398);
+    
+}
+
+
+
+/* media queries */
+
+@media (max-width: 450px) {
+    #button-container {
+        justify-content: center;
+        margin: 0;
+    }
+    .button-30 {
+        font-size: 30px;
+    }
+}
+

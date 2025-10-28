@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body style="text-align: center; font-size: larger;">
+  <h1>Open the console.</h1>
+  <p>This projects day is about learning the difference between copying and passing
+    by reference variables, arrays and objects.
+  </p>
+  <script>
+    // start with strings, numbers and booleans
+    console.group('Variables')
+      let x = 123;
+      let y = x;
+      console.log('x = y')
+      console.log(`Passing by reference x: ${x}, y: ${y}`);
+      x = 321;
+      console.log(`After updating x, now x: ${x}, y: ${y}`);
+    console.groupEnd()
+
+    // Let's say we have an array
+    console.group('Arrays')
+    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+    // and we want to make a copy of it.
+    const team = players;
+
+    console.log('Original array:');
+    console.log(players)
+    console.log(`After copying players to team`);
+    console.log(team)
+
+    // You might think we can just do something like this:
+
+    // however what happens when we update that array?
+    console.log(`We updated team but also changed players`);
+    team[3] = 'Lux';
+    console.log(players, team);
+
+    // now here is the problem!
+
+    // oh no - we have edited the original array too!
+
+    // Why? It's because that is an array reference, not an array copy. They both point to the same array!
+
+    // So, how do we fix this? We take a copy instead!
+
+    // one way
+    
+    const team2 = players.slice()
+    console.log(`But we can change the array without changing the original`)
+    console.log(`Using slice() to copy the array`)
+
+    // or create a new array and concat the old one in
+    console.log(`Another way is using concat`)
+    const team3 = [].concat(players)
+    // or use the new ES6 Spread
+    console.log(`or using the ...spread`)
+    const team4 = [...players]
+    // now when we update it, the original one isn't changed
+    team2[3] = 'Abril'
+    team3[3] = 'Pedro'
+    team4[3] = 'David'
+    console.log(team2, team3, team4)
+    console.log('And the original is still the same');
+    console.log(players)
+    console.groupEnd()
+
+
+    // The same thing goes for objects, let's say we have a person object
+    console.group('Objects')
+    // with Objects
+    console.log('Origianl object')
+    const person = {
+      name: 'Wes Bos',
+      age: 80
+    };
+    console.log(person);
+
+    // and think we make a copy:
+
+    // how do we take a copy instead?
+    console.log('One way is assing the values');
+    const personCopy1 = Object.assign({}, person, {sex: 'Male'})
+
+    console.log('Or we can make copies of objects using ...spread');
+    const personCopy2 = {...person};
+    personCopy2.favColor = 'White'
+    console.log(personCopy1, personCopy2);
+    console.log('And the original object remains the same')
+    console.log(person)
+    console.groupEnd()
+    
+
+  </script>
+
+</body>
+</html>

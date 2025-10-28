@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>CSS variables</title>
+</head>
+<body>
+    <h1>Update CSS variables with <span class="bg-color">JS</span></h1>
+    <div class="controls">
+        <label for="spacing">Padding:</label>
+        <input type="range" name="spacing" id="spacing" value="40" min="20" max="200" data-size="px">
+        <label for="blur">Blur:</label>
+        <input type="range" name="blur" id="blur" value="3" min="0" max="15" data-size="px">
+        <label for="bg-color">Bg color:</label>
+        <input type="color" name="bg-color" id="bg-color" value="#8AA8A1">
+    </div>
+
+    <img src="cat-img.jpg" alt="A cute image of a cat">
+
+    <style>
+
+        /* css variables */
+        :root {
+            --spacing: 40px;
+            --blur: 3px;
+            --bg-color: #8AA8A1;
+        }
+
+        * {
+            font-family: "Sarala", sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #442545;
+            color: #CBCBD4;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 56px 0;
+            font-size: 5rem;
+            text-shadow: 0 6px 4px black;
+        }
+
+        label {
+            font-size: 2.5rem;
+            margin-right: 0.3rem;
+        }
+
+        input {
+            margin-right: 2rem;
+            width: 100px;
+        }
+
+        img {
+            margin: 2.5rem 0;
+            background: var(--bg-color);
+            padding: var(--spacing);
+            filter: blur(var(--blur));
+            box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.75);
+        }
+
+        .bg-color {
+            color: var(--bg-color);
+        }
+
+        @media (max-width: 850px) { 
+
+            body {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 3rem;
+                text-align: center;
+            }
+
+            label {
+                font-size: 2rem;
+                display: block;
+            }
+
+            input {
+                margin-bottom: 20px;
+                width: 150px;
+            }
+
+            img {
+                width: 80%;
+            }
+            
+        }
+
+    </style>
+
+    <script>
+
+        const input = document.querySelectorAll('.controls input');
+
+        function handleUpdate() {
+            console.log(this.value)
+            const suffix = this.dataset.size;
+            if (suffix === 'px') {
+                document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
+            } else {
+                document.documentElement.style.setProperty(`--${this.name}`, this.value)
+            }
+        }
+
+        input.forEach(input => {input.addEventListener('change', handleUpdate)})
+        input.forEach(input => {input.addEventListener('mousemove', handleUpdate)})
+
+    </script>
+
+</body>
+</html>

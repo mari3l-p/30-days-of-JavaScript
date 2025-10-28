@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Drums</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="drum-container">
+            <img src="cat.png" alt="a cat playing a drum">
+        </div>
+    </div>
+
+    <audio data-key="74" src="sounds/hihat.wav"></audio>
+    <audio data-key="75" src="sounds/openhat.wav"></audio>
+    <audio data-key="76" src="sounds/tom.wav"></audio>
+    <audio data-key="70" src="sounds/kick.wav"></audio>
+    <audio data-key="83" src="sounds/snare.wav"></audio>
+    <audio data-key="68" src="sounds/ride.wav"></audio>
+
+    
+    <div id="button-container">
+        <button id="open-modal" class="button-30" role="button">Usage</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Usage:</h2>
+            <p>
+                Press a key button to make a drum sound.
+                <ul>
+                    <li>Kick drum - F</li>
+                    <li>Hi hat - J</li>
+                    <li>Ride cymbal - D</li>
+                    <li>Open hat - K</li>
+                    <li>Snare drum - S</li>
+                    <li>Tom toms - L</li>
+                </ul>
+            </p>
+            <span id="close-modal" class="close">&times;</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
