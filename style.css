@@ -1,0 +1,43 @@
+body {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    padding: 2rem;
+    background: #408DAD;
+    background: linear-gradient(135deg, rgba(64, 141, 173, 1) 0%, rgba(10, 11, 15, 1) 50%, rgba(187, 45, 151, 1) 100%);
+}
+
+main {
+    background-color: #0A0B0F; 
+    padding: 45px;
+    border-radius: 25px;
+}
+
+/* header */
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+p {font-size: 1.5rem; color: #808080;}
+
+a {color: #408DAD;}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+table {
+    text-align: left;
+    background-color: #171924;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 20px 45px;
+    margin-bottom: 25px;
+}
+
+
+td a {
+    display: block;
+    padding: 25px;
+}
