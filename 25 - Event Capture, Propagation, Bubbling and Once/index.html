@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Understanding JavaScript's Capture</title>
-  <link rel="icon" href="https://fav.farm/✅" />
+  <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body class="bod">
 
@@ -41,27 +41,23 @@
   }
 </style>
 
-<button></button>
+<button>Click me!!!!</button>
+<h1>See the console</h1>
 <script>
+
   const divs = document.querySelectorAll('div');
-  const button = document.querySelector('button');
+  const btn = document.querySelector('button')
 
   function logText(e) {
     console.log(this.classList.value);
-    // e.stopPropagation(); // stop bubbling!
-    // console.log(this);
   }
+
 
   divs.forEach(div => div.addEventListener('click', logText, {
     capture: false,
-    once: true
-  }));
+  }))
 
-  button.addEventListener('click', () => {
-    console.log('Click!!!');
-  }, {
-    once: true
-  });
+  btn.addEventListener('click', () => console.log('click!!!. You can only click once'), {once: true})
 
 </script>
 </body>
